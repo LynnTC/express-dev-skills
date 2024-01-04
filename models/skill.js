@@ -14,5 +14,5 @@ function getAll(){
 }
 
 function getOne(id){
-    return skills.find(skill => skills.skill === id);
+    return skills.find(skill => skill.skill === id);
 }

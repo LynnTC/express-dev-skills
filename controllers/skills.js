@@ -1,4 +1,4 @@
-const skill = require('../models/skill');
+const Skill = require('../models/skill');
 
 module.exports = {
     index,
@@ -8,12 +8,12 @@ module.exports = {
 
 function index(req, res) {
     res.render('skills/index', {
-        skills: skill.getAll()
+        skills: Skill.getAll()
     });
 }
 
 function show(req, res){
     res.render('skills/show', {
-        skill: skill.getOne(req.params.skill)
+        skill: Skill.getOne(req.params.id)
     });
 }
