@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel='stylesheet' href='/stylesheets/style.css' />
-    <title>Document</title>
+    <title>Home</title>
 </head>
 <body>
     <h1>Skills</h1>
@@ -14,8 +14,12 @@
                 <a href="/skills/<%= s.skill %>"><%= s.skill  %></a>
                     -
                 <%= s.proficiency ? 'yes' : 'no'  %>
+                <form action="/skills/<%= s.skill %>?_method=DELETE" class="delete-form" method="POST">
+                    <button type="submit">Delete Skill</button>
+                </form>           
             </li>
         <% }); %>
     </ul>
+    <a href="/skills/new">Add Skill</a>
 </body>
 </html>
